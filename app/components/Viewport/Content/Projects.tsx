@@ -29,7 +29,7 @@ const projects: Project[] = [
     user: "root",
     cmd: "./projects/nitch.codes",
     description:
-      "Personal operating environment and portfolio system. Built to simulate a tiling window manager in the browser.",
+      "A personal website where people can explore some of the projects I’ve built, learn a bit about me, and find ways to get in touch. It’s meant to be a straightforward, enjoyable place to browse and see what I’m working on.",
     cpu: 45.2,
     memory: "128MB",
     status: "running",
@@ -41,7 +41,7 @@ const projects: Project[] = [
     user: "root",
     cmd: "./projects/aurora-board",
     description:
-      "A Kanban-style task board designed to work alongside Project Aurora, providing a visual way to track tasks and progress tied to planned nodes.",
+      "A structured Kanban execution layer built to complement Project Aurora. Converts abstract planning nodes into actionable task streams with state-aware drag logic and lightweight progress tracking.",
     cpu: 12.8,
     memory: "64MB",
     status: "sleeping",
@@ -49,11 +49,11 @@ const projects: Project[] = [
     ports: ["https://aurora-board.vercel.app/"],
   },
   {
-    pid: 2026,
+    pid: 2027,
     user: "guest",
     cmd: "./projects/project-aurora",
     description:
-      "A project planning tool built for mapping and organizing work node by node. Includes a built-in markdown note system for documenting ideas, tasks, and decisions alongside the plan.",
+      "An interactive spatial planning engine for mapping complex systems node by node. Combines visual graph architecture with integrated markdown documentation to model dependencies, ideas, and structured execution in a unified interface.",
     cpu: 89.4,
     memory: "512MB",
     status: "sleeping",
@@ -65,7 +65,7 @@ const projects: Project[] = [
     user: "root",
     cmd: "./tools/aurora-music",
     description:
-      "A lightweight personal audio player built around local playback.",
+      "A minimal local audio runtime built in Python. Focused on offline reliability and distraction-free playback through a lightweight Tkinter interface.",
     cpu: 3.1,
     memory: "16MB",
     status: "zombie",
@@ -73,6 +73,7 @@ const projects: Project[] = [
     ports: ["https://github.com/GitRavioli/aurora_music"],
   },
 ];
+
 
 const StatusIcon = ({ status }: { status: string }) => {
   switch (status) {
@@ -130,9 +131,8 @@ export default function Projects() {
             <div key={p.cmd} className="group border-b border-[#EEEEEE]/20">
               <div
                 onClick={() => toggleProject(p.cmd)}
-                className={`grid grid-cols-12 gap-2 px-2 py-3 cursor-pointer transition-colors items-center ${
-                  isExpanded ? "bg-[#222831]/10" : "hover:bg-[#222831]/5"
-                }`}
+                className={`grid grid-cols-12 gap-2 px-2 py-3 cursor-pointer transition-colors items-center ${isExpanded ? "bg-[#222831]/10" : "hover:bg-[#222831]/5"
+                  }`}
               >
                 <div className="col-span-1 text-[#CCCCCC]">{p.pid}</div>
                 <div className="col-span-2 hidden sm:block text-[#AAAAAA]">
@@ -142,9 +142,8 @@ export default function Projects() {
                   20
                 </div>
                 <div
-                  className={`col-span-6 sm:col-span-5 font-bold truncate transition-colors ${
-                    isExpanded ? "text-[#379634]" : "text-[#EEEEEE]"
-                  }`}
+                  className={`col-span-6 sm:col-span-5 font-bold truncate transition-colors ${isExpanded ? "text-[#379634]" : "text-[#EEEEEE]"
+                    }`}
                 >
                   {p.cmd}
                 </div>
