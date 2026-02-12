@@ -9,7 +9,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Operator Interface",
+  title: "Jacob Huffman - Operator Interface",
   description: "Personal portfolio and project archive.",
 };
 
